@@ -1,0 +1,19 @@
+let obj = {
+  age: 18,
+  paid: true,
+  blocked: false,
+  badUsername: false,
+  isAdmin: false
+ }
+
+ if( obj.isAdmin == true){
+   console.log('ok')
+ }else if(obj.age >= 18 && obj.age <= 35 && obj.paid == true && obj.blocked == true &&obj.badUsername == true){
+  console.log('ok')
+ }else {
+   console.log('hi')
+ }
+
+
+ const proof = obj.isAdmin == true && obj.age >= 18 && obj.age <= 35 && obj.paid == true && obj.blocked == true &&obj.badUsername == true ? 'ok': 'block';
+ console.log(proof);

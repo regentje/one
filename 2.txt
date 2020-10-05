@@ -1,0 +1,6 @@
+Написать функцию для подсчета количества букв в слове:
+
+let count = function (word){
+  return word.length;
+}
+console.log(count('hidfdsfdsf'));
