@@ -1,10 +1,10 @@
-Íàïèñàòü ôóíêöèþ äëÿ ðåâåðñèè ñëîâà íå èñïîëüçóÿ âñòðîåííûå ìåòîäû:
+ÃÃ Ã¯Ã¨Ã±Ã Ã²Ã¼ Ã´Ã³Ã­ÃªÃ¶Ã¨Ã¾ Ã¤Ã«Ã¿ Ã°Ã¥Ã¢Ã¥Ã°Ã±Ã¨Ã¨ Ã±Ã«Ã®Ã¢Ã  Ã­Ã¥ Ã¨Ã±Ã¯Ã®Ã«Ã¼Ã§Ã³Ã¿ Ã¢Ã±Ã²Ã°Ã®Ã¥Ã­Ã­Ã»Ã¥ Ã¬Ã¥Ã²Ã®Ã¤Ã»:
 
-let reverce = function (word){
+let reverse = function (word){
   let rever = '';
  for (let i=word.length-1; i>=0; i--){
    rever += word[i];
  }
  return rever;
 }
-console.log(reverce('think'));
+console.log(reverse('think'));
