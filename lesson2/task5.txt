@@ -1,0 +1,46 @@
+const employees = [
+  {
+   firstName: 'Alex',
+   lastName: 'Smith',
+   age: 54,
+   salary: 10000,
+   position: 'Architect'
+  },
+  {
+   firstName: 'Gustav',
+   lastName: 'Andersen',
+   age: 31,
+   salary: 5000,
+   position: 'Software engineer'
+  },
+  {
+   firstName: 'Liz',
+   lastName: 'Taylor',
+   age: 20,
+   salary: 7000,
+   position: 'Manager'
+  }
+]
+
+//1. Узнать среднюю зарплату сотрудников*/
+const getSumSalary = function (acc, item){
+  return (acc + Number(item.salary))  ; 
+}
+const averageSalary = employees.reduce(getSumSalary,0) / employees.length;
+console.log(averageSalary);
+
+//2. Отсортировать сотрудников по зарплате
+const sortCallback = function (a,b) { 
+  return a.salary - b.salary;
+ };
+ const sortBySalary = employees.sort(sortCallback);
+ console.log(sortBySalary);
+
+
+//3. Получить список сотрудников с зарплатой >4500 и возрастом > 25 лет
+const filterAgeSalary = function (item) {
+  return item.salary > 4500 && item.age > 25;
+  }
+  const ageSalary = employees.filter(filterAgeSalary);
+
+  console.log(ageSalary);
