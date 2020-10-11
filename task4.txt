@@ -1,0 +1,10 @@
+//Реализовать функцию для фильтрации массива чисел по убыванию
+const numbers = [100000,-20, -10, 0, 10, 20, 30]
+
+const sortDesc= (arr) => { 
+  return arr.sort((a, b) => b - a
+  )};
+
+
+
+console.log(sortDesc(numbers));

@@ -26,3 +26,4 @@ arr1.length === arr2.length && arr1.every(function (value, index) {
     return value === arr2[index];
   });
 compare(one,two);
+
