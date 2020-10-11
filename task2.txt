@@ -1,10 +1,29 @@
 // не сообразил как сделать с помощью методов
+const one = ['user', 'user', 'user', 'admin23', 'sdf'];
+const two = ['user', 'user', 'user', 'admin23'];
+
+const compare = function (firstArr, secondArr) {
+  let result;
+  if (firstArr.length === secondArr.length) {
+    for (let i = 0; i < firstArr.length; i++) {
+      result = firstArr[i] == secondArr[i];
+    }
+  }else {
+    result = false;
+  }
+  return result;
+}
+console.log(compare(one, two));
+
+
+
+//с помощью every
 const one = ['user', 'user', 'user', 'admin'];
 const two = ['user', 'users', 'usert', 'admin'];
 
-const compare = function (firstArr, secondArr) { 
-  for (let i = 0; i < firstArr.length; i++){
-    console.log (firstArr[i] == secondArr[i]);
-  }
-}
+const compare = (arr1, arr2) => 
+arr1.length === arr2.length && arr1.every(function (value, index) {
+    return value === arr2[index];
+  });
 compare(one,two);
+
