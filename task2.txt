@@ -1,0 +1,10 @@
+// не сообразил как сделать с помощью методов
+const one = ['user', 'user', 'user', 'admin'];
+const two = ['user', 'users', 'usert', 'admin'];
+
+const compare = function (firstArr, secondArr) { 
+  for (let i = 0; i < firstArr.length; i++){
+    console.log (firstArr[i] == secondArr[i]);
+  }
+}
+compare(one,two);
