@@ -9,10 +9,10 @@
     this.history = () => console.log(memory);
     this.clearHistory = () => memory = [];
     this.operation = function (str) {
-      let split = str.split(' '),
-        a = +split[0],
-        operator = split[1],
-        b = +split[2]
+      let split = str.split(' ');
+        a = +split[0];
+        operator = split[1];
+        b = +split[2];
   
       memory.push({ operation: operator, operands: [a, b] })
       return this.calculate[operator](a, b);
