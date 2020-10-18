@@ -12,11 +12,9 @@
       result.fromCache = false;
       console.log(result);
     }
-    return (
       arg1 = x,
       arg2 = y,
       result
-    )
   }
   return getResult;
 }
