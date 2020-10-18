@@ -6,12 +6,9 @@
 
 
 function MoneyBox() {
-  this.coin = 0;
-
-  this.addCoin = () => {
-    this.coin = this.coin + 1;
-  }
-  this.getAmount = () => { console.log(this.coin) }
+  let coin = 0;
+  this.addCoin = () => { coin += 1; }
+  this.getAmount = () => { console.log(coin) }
 }
 const box = new MoneyBox();
 

@@ -12,8 +12,9 @@ function Show() {
     this.buyTicket = (nameConcert) => {
       if (concert.name === nameConcert) {
         let id = getId(100000, 1000000);
-        boxOffice += concert.value, ticketOffice.push(id);
-        console.log(id)
+        boxOffice += concert.value;
+        ticketOffice.push(id);
+        console.log(id);
       } else {
         console.log('there is no such concert')
       }
