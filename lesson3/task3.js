@@ -41,11 +41,11 @@
   //И очищать историю
   calculator.clearHistory()
   calculator.history() // []
-  console.log(calculator.operation('10 - 2')); // 8
+  console.log(calculator.operation('10 - 2')); 
   calculator.addOperation('/', (a, b) => a / b);
   calculator.addOperation('+', (a, b) => a + b);
   calculator.addOperation('*', (a, b) => a * b);
-  console.log(calculator.operation('10 / 2')); // 5
-  console.log(calculator.operation('31 + 32')); // 63
-  console.log(calculator.operation('10 * 2')); // 10
+  console.log(calculator.operation('10 / 2')); 
+  console.log(calculator.operation('31 + 32')); 
+  console.log(calculator.operation('10 * 2')); 
   calculator.history() // []
