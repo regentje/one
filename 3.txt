@@ -1,10 +1,10 @@
-Íàïèñàòü ôóíêöèþ äëÿ ðåâåðñèè ñëîâà íå èñïîëüçóÿ âñòðîåííûå ìåòîäû:
+﻿Íàïèñàòü ôóíêöèþ äëÿ ðåâåðñèè ñëîâà íå èñïîëüçóÿ âñòðîåííûå ìåòîäû:
 
 let reverse = function (word){
-  let rever = '';
+  let result = '';
  for (let i=word.length-1; i>=0; i--){
-   rever += word[i];
+   result += word[i];
  }
- return rever;
+ return result;
 }
 console.log(reverse('think'));
