@@ -8,8 +8,8 @@ let Rectangle = function (a, b) {
 }
 
 Box.prototype = {
-  scuare: function () {
-    console.log('scuare' + ':' + this.sideA * this.sideB);
+  square: function () {
+    console.log('square' + ':' + this.sideA * this.sideB);
   },
   perimeter: function () {
     console.log('perimeter' + ':' + 2 * (this.sideA * this.sideB));
@@ -23,6 +23,6 @@ let testRectangle = new Rectangle(55, 4);
 
 
 testBox.perimeter();
-testBox.scuare();
-testRectangle.scuare();
+testBox.square();
+testRectangle.square();
 testRectangle.perimeter();

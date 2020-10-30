@@ -1,35 +1,43 @@
-﻿const human = {
-  name: "John",
-  lastName: "Smith",
-  phoneNumber: "+1234567890"
-}
-const employees = {
-  position: "Senior engineer",
-  startDate: "10.10.1990",
-  endDate: "10.10.2000",
-  baseSalary: "10000",
-  salaryCurrency: "$",
-  location: "Russia",
-  department: "IT",
-}
-Object.setPrototypeOf(human, employees);
-
-const ability = {
-  eat: function () { },
-  sleep: function () { },
-  callFriend: function () { },
-  writeReport: function () { },
-  organizeMeeting: function () { },
-  retire: function () { },
-  startVacation: function () { },
-  currentEmployee: function () {
-    if (this.endDate === undefined) {
-      console.log('Нынешний сотрудник');
-    } else {
-      console.log('бывший сотрудник')
-    }
+﻿const СurrentEmployee = function () {
+  this.retire = function () {
+    console.log('заявление на увольнение')
   }
-};
+}
+const FormerEmployee = function () {
+  this.startVacation = function () {
+    console.log('вернуться на старую работу')
+  }
+}
+const Employees = function (position, startDate, baseSalary, salaryCurrency, location, department,endDate) {
+  if(endDate == undefined ) {
+    СurrentEmployee.call(this);
+  }else{
+    FormerEmployee.call(this);
+  }
+  this.position = position;
+  this.startDate = startDate;
+  this.endDate = endDate;
+  this.baseSalary = baseSalary;
+  this.salaryCurrency = salaryCurrency;
+  this.location = location;
+  this.department = department;
+  this.writeReport = function () { console.log('writeReport') };
+  this.organizeMeeting = function () { console.log('organizeMeeting') };
+  
+}
 
-Object.setPrototypeOf(employees, ability);
-human.currentEmployee();
+const Human = function (name, lastName, phoneNumber,position, startDate, baseSalary, salaryCurrency, location, department,endDate ) {
+  Employees.call(this, position, startDate, baseSalary, salaryCurrency, location, department,endDate)
+  this.name = name;
+  this.lastName = lastName;
+  this.phoneNumber = phoneNumber;
+  this.eat = function () { };
+  this.sleep = function () {console.log('sleep') };
+  this.callFriend = function () { };
+}
+
+const alex = new Human("name", "lastName", "phoneNumber", "position", "startDate", "baseSalary", "salaryCurrency", "location", "department","25.05.2020");
+
+console.log(alex);
+alex.writeReport();
+alex.startVacation();
