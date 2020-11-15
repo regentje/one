@@ -1,0 +1,28 @@
+/*—оздать пустой объект и наполнить его данными:
+1. ƒобавить свойство name и записать в него значение СAlexТ
+2. ƒобавить свойство lastName и записать в него значение СSmithТ
+3. ѕрисвоить значение СBobТ в свойство name
+4. ”далить оба свойства*/
+
+
+let obj = Object.create({}, {
+  name: {
+    value: 'Alex',
+    writable: true,
+    configurable: true
+  },
+  lastName: {
+    value: 'Smith',
+    writable: true,
+    configurable: true
+  }
+});
+
+
+
+obj.name = 'Bob';
+console.log(obj.name );
+delete obj.name
+delete obj.lastName
+console.log(obj.name );
+console.log(obj.lastName);

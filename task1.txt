@@ -1,0 +1,19 @@
+const getArr = function (str) {
+  const arr = str.split(' ');
+const obj = arr.map(item => Object.create({}, {
+      word: {
+        value: item,
+      },  
+      length : {
+        value :  item.length
+      },
+      isCapitalized: {
+        value: item[0] === item[0].toUpperCase()
+      }
+    })
+);
+return obj
+  };   
+  
+
+console.log(getArr('простые задачи сложнее Сложных'));

@@ -1,0 +1,46 @@
+//Реализовать функцию для случайной сортировки элементов массива
+
+const employees = [
+  {
+   firstName: 'Alex',
+   lastName: 'Smith',
+   age: 54,
+   salary: 10000,
+   position: 'Architect'
+  },
+  {
+   firstName: 'Gustav',
+   lastName: 'Andersen',
+   age: 31,
+   salary: 5000,
+   position: 'Software engineer'
+  },
+  {
+   firstName: 'Liz',
+   lastName: 'Taylor',
+   age: 20,
+   salary: 7000,
+   position: 'Manager'
+  },
+  {
+    firstName: 'Alexey',
+    lastName: 'Smither',
+    age: 54,
+    salary: 10000,
+    position: 'Architect'
+   },
+   {
+    firstName: 'Anna',
+    lastName: 'May',
+    age: 54,
+    salary: 10000,
+    position: 'Architect'
+   },
+]
+
+let shuffled = function(arr){
+  return Math.random() - 0.5;
+};
+const arrShuffled = employees.sort(shuffled);
+
+console.log(arrShuffled);

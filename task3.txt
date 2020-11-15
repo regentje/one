@@ -1,0 +1,13 @@
+//Реализовать функцию для фильтрации массива по длине слов, значения длины указываются включительно, фильтр должен работать так:  
+
+
+const fruits = ['orange', 'apple', 'banana', '']
+
+
+
+const filterByLength = (arr,min,max) =>{ 
+  return fruits.filter(fruit => fruit.length >= min && fruit.length <= max);
+}
+
+console.log(filterByLength(fruits, 0,5));
+
