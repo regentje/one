@@ -51,8 +51,8 @@ const kingWhite = new King('White');
 
 class Game {
   constructor() {
+    status = 'ready';
   }
-  status = 'ready';
   start() {
     this.status = 'progress'
     this.board = [
@@ -66,20 +66,18 @@ class Game {
       [bishopWhite, knightWhite, rookWhite, queenWhite, kingWhite, rookWhite, knightWhite, bishopWhite],
     ];
   }
-  move([a, b], [x, y]) {
+  move([fromX, fromY], [toX, toY]) {
     if (this.status !== 'progress') {
       throw `You can't make moves when game is in '${this.status}' status`;
-    } else {
-      this.board[x][y] = this.board[a][b];
-      this.board[a][b] = null;
     }
+    this.board[toX][toY] = this.board[fromX][fromY];
+    this.board[fromX][fromY] = null;
   }
   win(colorWin) {
-    if (colorWin !== 'Black') {
+    if (colorWin !== 'Black' && colorWin !== 'White') {
       throw `You chose the wrong color '${colorWin}'`;
-    } else {
-      this.status = 'Black won';
-    }
+    } 
+      this.status = `${colorWin} won`;
   }
 }
 const game = new Game();
