@@ -51,7 +51,8 @@ const kingWhite = new King('White');
 
 class Game {
   constructor() {
-    status = 'ready';
+    this.status = 'ready';
+    this.board;
   }
   start() {
     this.status = 'progress'
