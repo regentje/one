@@ -5,7 +5,7 @@ class Piece {
   getMovePiece() {
     let availableMoves;
     if (this.color !== game.player) {
-      throw ` I can't move! `;
+      throw `I can't move! `;
     }
     availableMoves = ['x', 'y'];
   };
