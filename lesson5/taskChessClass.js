@@ -2,15 +2,19 @@ class Piece {
   constructor(color) {
     this.color = color;
   };
-  getMove(){
-
+  getMovePiece() {
+    let availableMoves;
+    if (this.color !== game.player) {
+      throw ` I can't move! `;
+    }
+    availableMoves = ['x', 'y'];
   };
 };
 class Queen extends Piece {
   constructor(color) {
     super(color);
   };
- 
+
 };
 class Knight extends Piece {
   constructor(color) {
@@ -42,6 +46,7 @@ class Pawn extends Piece {
     };
     board.board[game.selectedPieceX][game.selectedPieceY] = exchangePiece;
   };
+
 };
 let queenBlack = new Queen('Black');
 let pawnBlack = new Pawn('Black');
@@ -64,7 +69,7 @@ class Game {
     this.selectedPieceY = null;
     this.killed = [];
     this.count = 0;
-    this.history=[];
+    this.history = [];
   };
   start() {
     this.status = 'progress';
@@ -105,16 +110,15 @@ class Game {
     };
     board.move([toX, toY]);
     this.count += 1;
-    this.history.push([this.selectedPieceX,this.selectedPieceY, toX, toY]);
-
+    this.history.push([this.selectedPieceX, this.selectedPieceY, toX, toY]);
     if (this.player === 'White') {
       this.player = 'Black';
     } else {
       this.player = 'White';
     };
   };
-  getMove(){
-    board.board[this.selectedPieceX][this.selectedPieceY].getMove();
+  getMove() {
+    board.board[this.selectedPieceX][this.selectedPieceY].getMovePiece();
   }
 };
 class Board {
@@ -134,19 +138,20 @@ class Board {
     if (game.status !== 'progress') {
       throw `You can't make moves when game is in '${game.status}' status`;
     };
-    if (this.board[toX][toY] === null) {
-      this.board[toX][toY] = this.board[game.selectedPieceX][game.selectedPieceY];
-      this.board[game.selectedPieceX][game.selectedPieceY] = null;
-    } else if (this.board[toX][toY].color == this.board[game.selectedPieceX][game.selectedPieceY].color) {
+    let select = this.board[game.selectedPieceX][game.selectedPieceY];
+    let goal = this.board[toX][toY];
+    if (goal !== null && goal.color === select.color) {
       throw `You can't kill your piece`;
-    } else if (this.board[toX][toY].color !== this.board[game.selectedPieceX][game.selectedPieceY].color) {
-      game.killed.push(this.board[toX][toY]);
-      this.board[toX][toY] = this.board[game.selectedPieceX][game.selectedPieceY];
+    } else if (goal === null) {
+      this.board[toX][toY] = select;
+      this.board[game.selectedPieceX][game.selectedPieceY] = null;
+    } else if (goal.color !== select.color) {
+      game.killed.push(goal);
+      this.board[toX][toY] = select;
       this.board[game.selectedPieceX][game.selectedPieceY] = null;
     };
   };
 };
-
 
 const board = new Board();
 const game = new Game();
