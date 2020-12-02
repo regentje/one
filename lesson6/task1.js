@@ -10,8 +10,7 @@ function parseTemplate() {
             elem.textContent = obj[box];
         } else {
             throw 'Error';
-        };
-    };
-};
-
+        }
+    }
+}
 parseTemplate();

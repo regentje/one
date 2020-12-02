@@ -3,7 +3,7 @@ const nestedList = ["Item", ["Item2", ["Item3"]]];
 function nested(subject, goal) {
     if (!goal) {
         goal = document.querySelector('body');
-    };
+    }
     if (Array.isArray(subject)) {
         const ul = document.createElement('ul');
         goal.append(ul);
@@ -12,6 +12,6 @@ function nested(subject, goal) {
         const li = document.createElement('li');
         li.textContent = subject;
         goal.append(li);
-    };
-};
+    }
+}
 nested(nestedList);
